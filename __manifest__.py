@@ -9,7 +9,6 @@
     "data": [
         "data/ir_sequence_data.xml",
         "views/res_company_views.xml",
-        "views/res_config_settings_views.xml",
         "views/ir_sequence_views.xml"
     ],
     "application": False,
