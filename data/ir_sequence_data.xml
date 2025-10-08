@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="sequence_invoice_custom" model="ir.sequence">
+            <field name="name">Custom Invoice Sequence</field>
+            <field name="code">custom.invoice.sequence</field>
+            <field name="prefix">INV/%(year)s/%(month)s/</field>
+            <field name="padding">4</field>
+            <field name="implementation">no_gap</field>
+        </record>
+    </data>
+</odoo>
