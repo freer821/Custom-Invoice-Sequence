@@ -8,6 +8,7 @@
     "depends": ["account"],
     "data": [
         "data/ir_sequence_data.xml",
+        "data/res_company_data.xml",
         "views/res_company_views.xml",
         "views/ir_sequence_views.xml"
     ],

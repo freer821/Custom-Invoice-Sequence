@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <function model="res.company" name="search">
+            <value eval="[]"/>
+            <function model="res.company" name="write">
+                <value eval="{'use_custom_invoice_sequence': True, 'invoice_custom_sequence_id': ref('sequence_invoice_custom')}"/>
+            </function>
+        </function>
+    </data>
+</odoo>
