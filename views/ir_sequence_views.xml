@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sequence_form_custom_invoice" model="ir.ui.view">
+        <field name="name">ir.sequence.form.custom.invoice</field>
+        <field name="model">ir.sequence</field>
+        <field name="inherit_id" ref="base.sequence_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="create">0</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_custom_invoice_sequence" model="ir.actions.act_window">
+        <field name="name">Invoice Sequence</field>
+        <field name="res_model">ir.sequence</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('code', '=', 'custom.invoice.sequence')]</field>
+        <field name="context">{'default_code': 'custom.invoice.sequence'}</field>
+    </record>
+
+    <menuitem id="menu_custom_invoice_sequence"
+              name="Invoice Sequence"
+              parent="account.menu_finance_configuration"
+              action="action_custom_invoice_sequence"
+              sequence="100"/>
+</odoo>
