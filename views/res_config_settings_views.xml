@@ -3,31 +3,29 @@
     <record id="view_res_config_settings_custom_invoice_sequence" model="ir.ui.view">
         <field name="name">res.config.settings.custom.invoice.sequence</field>
         <field name="model">res.config.settings</field>
-        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[@class='settings']" position="inside">
-                <div class="settings" data-key="custom_invoice_sequence_settings">
-                    <h2>Custom Invoice Numbering</h2>
-                    <div class="o_setting_container">
-                        <div class="o_setting_box" data-key="custom_invoice_sequence">
-                            <div class="o_setting_left_pane">
-                                <field name="use_custom_invoice_sequence"/>
+            <div class="settings" data-key="custom_invoice_sequence_settings" position="inside">
+                <h2>Custom Invoice Numbering</h2>
+                <div class="o_setting_container">
+                    <div class="o_setting_box" data-key="custom_invoice_sequence">
+                        <div class="o_setting_left_pane">
+                            <field name="use_custom_invoice_sequence"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="use_custom_invoice_sequence"/>
+                            <div class="text-muted">
+                                Decide whether customer invoices use a dedicated sequence instead of the journal one.
                             </div>
-                            <div class="o_setting_right_pane">
-                                <label for="use_custom_invoice_sequence"/>
-                                <div class="text-muted">
-                                    Decide whether customer invoices use a dedicated sequence instead of the journal one.
-                                </div>
-                                <div attrs="{'invisible': [('use_custom_invoice_sequence', '=', False)]}">
-                                    <field name="invoice_custom_sequence_id"
-                                           domain="[('code', '=', 'custom.invoice.sequence'), ('company_id', 'in', [False, company_id])]"
-                                           options="{'no_quick_create': True, 'no_create_edit': False}"/>
-                                </div>
+                            <div attrs="{'invisible': [('use_custom_invoice_sequence', '=', False)]}">
+                                <field name="invoice_custom_sequence_id"
+                                       domain="[('code', '=', 'custom.invoice.sequence'), ('company_id', 'in', [False, company_id])]"
+                                       options="{'no_quick_create': True, 'no_create_edit': False}"/>
                             </div>
                         </div>
                     </div>
                 </div>
-            </xpath>
+            </div>
         </field>
     </record>
 </odoo>
