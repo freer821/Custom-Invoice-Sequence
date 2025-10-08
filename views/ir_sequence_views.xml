@@ -14,9 +14,9 @@
     <record id="action_custom_invoice_sequence" model="ir.actions.act_window">
         <field name="name">Invoice Sequence</field>
         <field name="res_model">ir.sequence</field>
-        <field name="view_mode">tree,form</field>
-        <field name="domain">[('code', '=', 'custom.invoice.sequence')]</field>
-        <field name="context">{'default_code': 'custom.invoice.sequence'}</field>
+        <field name="view_mode">form</field>
+        <field name="res_id" ref="sequence_invoice_custom"/>
+        <field name="target">current</field>
     </record>
 
     <menuitem id="menu_custom_invoice_sequence"
